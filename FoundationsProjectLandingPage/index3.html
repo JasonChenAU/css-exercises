@@ -1,0 +1,102 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <h1>Test</h1>
+
+    <button id="btn">CLICK ME BABY</button>
+    
+    
+</body>
+<script defer>
+
+    const btn = document.querySelector("#btn");
+    btn.addEventListener("click", (f) => {
+        alert("Hello World");
+        console.log('test', f);
+
+    });
+    const container = document.querySelector("body");
+
+    const p1element = document.createElement("p");
+    p1element.style.color = 'red';
+    p1element.classList.add("p1Content");
+    p1element.textContent = "Hey I'm red";
+
+    container.appendChild(p1element);
+
+    const h3element = document.createElement("h3");
+    h3element.style.color ='blue';
+    h3element.textContent = "I'm a blue h3"
+
+    container.appendChild(h3element);
+
+    const divContainer = document.createElement('div');
+    divContainer.style.border = "5px dotted black";
+    divContainer.style.background ='pink';
+
+    const h4element = document.createElement('h4');
+    h4element.textContent = "i'm in a div";
+
+    const p2element = document.createElement('p');
+    p2element.textContent = "ME TOO!";
+
+    divContainer.appendChild(h4element);
+    divContainer.appendChild(p2element);
+    container.appendChild(divContainer);
+
+</script>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple DOM example</title>
+    <style>
+        .highlight {
+          color: white;
+          background-color: black;
+          padding: 10px;
+          width: 250px;
+          text-align: center;
+        }
+      </style>
+  </head>
+  <body>
+      <section>
+        <img src="dinosaur.png" alt="A red Tyrannosaurus Rex: A two legged dinosaur standing upright like a human, with small arms, and a large head with lots of sharp teeth.">
+        <p>Here we will add a link to the <a href="https://www.mozilla.org/">Mozilla homepage</a></p>
+        
+      </section>
+      <script>
+        const link = document.querySelector("a");
+        link.textContent = "Mozilla Developer Network";
+        link.href = "https://developer.mozilla.org";
+        const sect = document.querySelector("section");
+        const para = document.createElement("p");
+        para.textContent = "We hope you enjoyed the ride.";
+        sect.appendChild(para);
+
+        const text = document.createTextNode(
+         " — the premier source for web development knowledge.",
+        );
+
+        const linkPara = document.querySelector("p");
+        linkPara.appendChild(text);
+
+        sect.appendChild(linkPara);
+
+        // sect.removeChild(linkPara);
+        //linkPara.remove();
+        para.setAttribute("class", "highlight");
+
+
+      </script>
+  </body>
+</html>
