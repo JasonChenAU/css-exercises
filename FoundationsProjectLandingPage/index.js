@@ -83,3 +83,17 @@ function Stopwatch() {
 const sw = new Stopwatch();
 
 
+function sumOfTripledEvens(array) {
+    return array.filter((num) => {
+        return num % 2 === 0;
+    }).map((num) => {
+        return num * 3;
+    }).reduce((sum, num) => {
+        return sum + num;
+    }, 0);
+}
+
+console.log(sumOfTripledEvens([1,2,3,4,5]))
+
+
+
